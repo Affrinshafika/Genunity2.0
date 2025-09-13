@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Clock, MapPin, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Impact = () => {
+  const navigate = useNavigate();
   const stats = [
     {
       icon: Users,
@@ -91,7 +93,13 @@ export const Impact = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {impactStories.map((story, index) => (
-              <Card key={index} className="p-6 bg-gradient-card shadow-card hover:shadow-elevated transition-all duration-300">
+              <Card 
+                key={index} 
+                className={`p-6 bg-gradient-card shadow-card hover:shadow-elevated transition-all duration-300 ${
+                  index === 0 ? 'cursor-pointer hover:scale-105' : ''
+                }`}
+                onClick={index === 0 ? () => navigate('/blood-drive') : undefined}
+              >
                 <div className="flex items-start justify-between mb-4">
                   <Badge variant="secondary" className="text-xs bg-primary/20 text-primary">
                     {story.badge}
