@@ -12,7 +12,9 @@ const Index = () => {
       <Hero />
       <RoleSelection />
       <AIFeatures />
-      <Impact />
+      <div id="impact">
+        <Impact />
+      </div>
       <Footer />
     </div>
   );

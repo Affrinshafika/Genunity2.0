@@ -95,10 +95,12 @@ export const Impact = () => {
             {impactStories.map((story, index) => (
               <Card 
                 key={index} 
-                className={`p-6 bg-gradient-card shadow-card hover:shadow-elevated transition-all duration-300 ${
-                  index === 0 ? 'cursor-pointer hover:scale-105' : ''
-                }`}
-                onClick={index === 0 ? () => navigate('/blood-drive') : undefined}
+                className="p-6 bg-gradient-card shadow-card hover:shadow-elevated transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => {
+                  if (index === 0) navigate('/blood-drive');
+                  else if (index === 1) navigate('/restaurant-surplus');
+                  else if (index === 2) navigate('/employment-creation');
+                }}
               >
                 <div className="flex items-start justify-between mb-4">
                   <Badge variant="secondary" className="text-xs bg-primary/20 text-primary">

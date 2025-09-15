@@ -8,8 +8,9 @@ export const Navigation = () => {
   const navItems = [
     { label: "How It Works", href: "/how-it-works" },
     { label: "For NGOs", href: "/for-ngos" },
-    { label: "Impact", href: "#impact" },
-    { label: "About", href: "/about" }
+    { label: "Impact", href: "/#impact" },
+    { label: "About", href: "/about" },
+    { label: "Home", href: "/" }
   ];
 
   return (
@@ -17,7 +18,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.location.href = '/'}>
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">G</span>
             </div>

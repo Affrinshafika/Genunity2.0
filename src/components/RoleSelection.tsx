@@ -53,6 +53,12 @@ export const RoleSelection = () => {
               <Card 
                 key={index} 
                 className="p-8 bg-gradient-card shadow-card hover:shadow-elevated transition-all duration-300 cursor-pointer group hover:scale-[1.02]"
+                onClick={() => {
+                  if (index === 0) window.location.href = '/seeker-dashboard';
+                  else if (index === 1) window.location.href = '/donor-dashboard';
+                  else if (index === 2) window.location.href = '/ngo-dashboard';
+                  else if (index === 3) window.location.href = '/restaurant-dashboard';
+                }}
               >
                 <div className="text-center space-y-6">
                   <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
