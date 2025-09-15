@@ -6,10 +6,10 @@ export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "How It Works", href: "#features" },
-    { label: "For NGOs", href: "#ngos" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "For NGOs", href: "/for-ngos" },
     { label: "Impact", href: "#impact" },
-    { label: "About", href: "#about" }
+    { label: "About", href: "/about" }
   ];
 
   return (
@@ -39,8 +39,8 @@ export const Navigation = () => {
 
           {/* Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost">Sign In</Button>
-            <Button variant="hero">Get Started</Button>
+            <Button variant="ghost" onClick={() => window.location.href = '/signin'}>Sign In</Button>
+            <Button variant="hero" onClick={() => window.location.href = '/get-started'}>Get Started</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,8 +69,8 @@ export const Navigation = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 mt-4">
-                <Button variant="ghost" className="w-full">Sign In</Button>
-                <Button variant="hero" className="w-full">Get Started</Button>
+                <Button variant="ghost" className="w-full" onClick={() => window.location.href = '/signin'}>Sign In</Button>
+                <Button variant="hero" className="w-full" onClick={() => window.location.href = '/get-started'}>Get Started</Button>
               </div>
             </div>
           </div>
